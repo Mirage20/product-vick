@@ -1,0 +1,5 @@
+name: kube-conf
+credentials:
+- name: kubeconfig
+  source:
+    path: /home/<name>/.kube/config

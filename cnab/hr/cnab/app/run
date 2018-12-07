@@ -1,0 +1,24 @@
+#!/bin/sh
+export KUBECONFIG="/root/.kube/config"
+action=$CNAB_ACTION
+name=$CNAB_INSTALLATION_NAME
+chart=/cnab/app/chart/
+
+case $action in
+    install)
+        helm template ${chart} --set name=${name} | kubectl create -f -
+        ;;
+    uninstall)
+        helm template ${chart} --set name=${name} | kubectl delete -f -
+        ;;
+    upgrade)
+        echo "Upgrade action not supported"
+        ;;
+    status)
+        kubectl get cell ${name}
+        ;;
+    *)
+    echo "No action for $action"
+    ;;
+esac
+echo "Action $action complete for $name"

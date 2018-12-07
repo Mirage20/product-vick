@@ -1,0 +1,29 @@
+{
+    "name": "stock-options",
+    "version": "0.1.0",
+    "description": "Employee - Stock Options Cell",
+    "keywords": [
+        "stock-options"
+    ],
+    "maintainers": [
+        {
+            "name": "Miraj Abeysekara",
+            "email": "miraj@wso2.com",
+            "url": "https://example.com"
+        }
+    ],
+    "invocationImages": {
+        "cnab": {
+            "name": "cnab",
+            "builder": "docker",
+            "configuration": {
+                "registry": "deislabs"
+            }
+        }
+    },
+    "credentials": {
+        "kubeconfig": {
+            "path": "/root/.kube/config"
+        }
+    }
+}
