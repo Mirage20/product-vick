@@ -1,29 +1,45 @@
 {
-    "name": "hr",
-    "version": "0.1.0",
-    "description": "Employee - HR Cell",
-    "keywords": [
-        "hr"
-    ],
-    "maintainers": [
-        {
-            "name": "Miraj Abeysekara",
-            "email": "miraj@wso2.com",
-            "url": "https://example.com"
-        }
-    ],
-    "invocationImages": {
-        "cnab": {
-            "name": "cnab",
-            "builder": "docker",
-            "configuration": {
-                "registry": "deislabs"
-            }
-        }
-    },
-    "credentials": {
-        "kubeconfig": {
-            "path": "/root/.kube/config"
-        }
+  "name": "hr",
+  "version": "0.1.0",
+  "description": "Employee - HR Cell",
+  "keywords": [
+    "hr"
+  ],
+  "maintainers": [
+    {
+      "name": "Vick",
+      "email": "product-vick@wso2.com",
+      "url": "https://wso2.com"
     }
+  ],
+  "invocationImages": {
+    "cnab": {
+      "name": "cnab",
+      "builder": "docker",
+      "configuration": {
+        "registry": "deislabs"
+      }
+    }
+  },
+  "credentials": {
+    "kubeconfig": {
+      "path": "/root/.kube/config"
+    }
+  },
+  "parameters": {
+    "employee-cell-name": {
+      "type": "string",
+      "required": true,
+      "destination": {
+        "env": "EMPLOYEE_CELL"
+      }
+    },
+    "stock-cell-name": {
+      "type": "string",
+      "required": true,
+      "destination": {
+        "env": "STOCK_CELL"
+      }
+    }
+  }
 }

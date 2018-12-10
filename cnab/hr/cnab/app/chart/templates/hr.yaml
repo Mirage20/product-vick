@@ -23,9 +23,9 @@ spec:
         - containerPort: 8080
         env:
         - name: employeegw_url
-          value: employee--gateway-service
+          value: {{ .Values.employeeCellName }}--gateway-service
         - name: stockgw_url
-          value: stock-options--gateway-service
+          value: {{ .Values.stockCellName }}--gateway-service
       servicePort: 80
   - metadata:
       name: debug

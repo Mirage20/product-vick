@@ -6,7 +6,7 @@ chart=/cnab/app/chart/
 
 case $action in
     install)
-        helm template ${chart} --set name=${name} | kubectl create -f -
+        helm template ${chart} --set name=${name},employeeCellName=$EMPLOYEE_CELL,stockCellName=$STOCK_CELL | kubectl create -f -
         ;;
     uninstall)
         helm template ${chart} --set name=${name} | kubectl delete -f -
